@@ -29,6 +29,8 @@ target_df = target_df.drop([last_idx, last_idx-1])
 target_df['Country Name'] = target_df['Country Name'].str.replace('\[.*\]','')
 #Issue 5 Extra Value ("No Data") in Column 4
 target_df['Total Recoveries'] = target_df['Total Recoveries'].str.replace('No data','0')
+target_df['Total Cases'] = target_df['Total Cases'].str.replace('No data','0')
+target_df['Total Deaths'] = target_df['Total Deaths'].str.replace('No data','0')
 #Issue 6 Wrong Data Type
 target_df['Total Cases'] = pd.to_numeric(target_df['Total Cases'])
 target_df['Total Deaths'] = pd.to_numeric(target_df['Total Deaths'])
